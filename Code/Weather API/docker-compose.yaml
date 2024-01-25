@@ -1,0 +1,44 @@
+version: '3.5'
+
+services:
+  nginx:
+    build: ./nginx
+
+    ports:
+      - "1339:80"
+
+    volumes:
+      - static_volume:/app/demo/static
+
+    depends_on:
+      - web
+
+    restart: "on-failure"
+
+  web:
+    build: .
+
+    command: sh -c "python manage.py makemigrations &&
+                    python manage.py migrate &&
+                    python manage.py collectstatic --no-input &&
+                    gunicorn demo_api.wsgi:application --bind 0.0.0.0:8000"
+
+    environment:
+      OPEN_WEATHER_MAP_API_TOKEN: ${OPEN_WEATHER_MAP_API_TOKEN}
+      MAP_BOX_API_TOKEN: ${MAP_BOX_API_TOKEN}
+      DEBUG: ${DEBUG}
+      SECRET_KEY: ${SECRET_KEY}
+
+    volumes:
+      - .:/demo
+      - static_volume:/app/demo/static
+
+    image: demo_api
+
+    expose:
+      - "8000"
+
+    restart: "on-failure"
+
+volumes:
+  static_volume:

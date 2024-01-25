@@ -1,0 +1,49 @@
+
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = WeatherApplication
+  MODULE_UNI_FILE                = WeatherApplication.uni
+  FILE_GUID                      = c4f0a471-17ec-4924-8968-7de4311d9959
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 1.0
+  ENTRY_POINT                    = UefiMain
+
+UEFI_HII_RESOURCE_SECTION      = TRUE
+
+#  VALID_ARCHITECTURES           = IA32 X64 EBC
+
+[Sources]
+  WeatherApplication.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+  NetworkPkg/NetworkPkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiBootServicesTableLib
+  UefiRuntimeServicesTableLib
+  UefiLib
+  PcdLib
+  HttpLib
+  MemoryAllocationLib
+
+[Guids]
+  gEfiTlsCaCertificateGuid
+
+[Ppis]
+
+[Protocols]
+  gEfiHttpProtocolGuid
+  gEfiHttpUtilitiesProtocolGuid
+  gEfiHttpServiceBindingProtocolGuid
+
+[FeaturePcd]
+
+[Pcd]
+  gEfiNetworkPkgTokenSpaceGuid.PcdAllowHttpConnections
+
+[UserExtensions.TianoCore."ExtraFiles"]
+  WeatherApplication.uni
+

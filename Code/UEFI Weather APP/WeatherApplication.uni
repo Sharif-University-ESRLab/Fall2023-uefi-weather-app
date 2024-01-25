@@ -1,0 +1,4 @@
+#string STR_MODULE_ABSTRACT             #language en-US "UEFI Weather Application EDKII Module"
+
+#string STR_MODULE_DESCRIPTION          #language en-US "This is a sample shell application that will show the weather status to the UEFI Console based on PCD setting by collecting the data from an online API."
+

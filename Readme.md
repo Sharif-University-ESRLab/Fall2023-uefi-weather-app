@@ -1,20 +1,21 @@
 
-![Logo](https://via.placeholder.com/468x150?text=Your+Logo+Here)
+![Logo](Miscellaneous/weather-logo.jpeg)
 
 
 
-# Project Title
+# UEFI Weather APP
 
-A brief description of what this project does and who it's for comes here.
+This project is part of the Hardware Lab (CE-40102) course, featuring a UEFI application designed to display weather information and forecasts for users. The primary focus lies in the ability to interact with a network interface card (NIC) within the UEFI environment and initiate a simple HTTP request using the tools provided by EDK II, the standard UEFI implementation. This project serves as an excellent learning opportunity for working with the fundamentals of the UEFI environment and stands as a valuable reference for those seeking to utilize network interfaces within this setting. The resulting application serves as a convenient tool for users to check the weather upon turning on their computers.
 
 
 ## Tools
-In this section, you should mention the hardware or simulators utilized in your project.
+Some of the tools and technologies that our project mostly relies on are listed below:
 - Qemu
-- Gem5
-- ESP32
-- Raspberry Pi 3B
-- Temperature Sensor
+- EDK2
+- OVMF
+- KVM
+- C
+- Python
 
 
 ## Implementation Details
@@ -53,14 +54,14 @@ In this section, you should present your results and provide an explanation for 
 Using image is required.
 
 ## Related Links
-Some links related to your project come here.
+
  - [EDK II](https://github.com/tianocore/edk2)
- - [ESP32 Pinout](https://randomnerdtutorials.com/esp32-pinout-reference-gpios/)
+ - [Qemu](https://www.qemu.org/docs/master/)
  - [Django Doc](https://docs.djangoproject.com/en/5.0/)
 
 
 ## Authors
-Authors and their github link comes here.
-- [@Author1](https://github.com/Sharif-University-ESRLab)
-- [@Author2](https://github.com/Sharif-University-ESRLab)
 
+- [Mohammad Sadegh Majidi Yazdi](https://github.com/sadegh-majidi)
+- [Mahdi Jafari Raviz](https://github.com/mahdi-jfri)
+- [Solale Mohammadi](https://github.com/solale427)
