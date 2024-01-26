@@ -131,7 +131,7 @@ Now, we are ready to start **Qemu** and run our program. We introduce our custom
 After everything is loaded and initialized (ensure that the commands in [startup.nsh](Code/startup.nsh) are executed successfully) and the shell is ready, type the following command in the UEFI shell to start the weather application:
 
 ```shell
-  fs0:WeatherApllication.efi
+  fs0:WeatherApplication.efi
 ```
 
 You can then enter the name of a city you wish to check its weather status, and the program will print a brief report before exiting.
