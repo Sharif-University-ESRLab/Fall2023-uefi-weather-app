@@ -26,16 +26,41 @@ There is also a comprehensive [report](Document/Readme.md) (in **PDF**) for this
 
 ## How to Run
 
-In this part, you should provide instructions on how to run your project. Also if your project requires any prerequisites, mention them. 
+### Prerequisites
 
-#### Examples:
-#### Build Project
-Your text comes here
+Before starting our work, we need to install several packages and tools to build and run our program successfully.
+
+Install the following packages using apt:
+
 ```bash
-  build --platform=OvmfPkg/OvmfPkgX64.dsc --arch=X64 --buildtarget=RELEASE --tagname=GCC5
+  sudo apt install gcc build-essential uuid-dev iasl nasm python-is-python3
 ```
 
-#### Run server
+### Install Qemu
+
+To run our program on a simulator, the first step is to install **Qemu**. This tool allows us to conduct experiments on UEFI without directly interacting with hardware, saving both time and resources. On an Ubuntu operating system, you can install **Qemu** using the official apt repository, although this may provide an older version depending on your Ubuntu release. Alternatively, you can manually build it from the source, granting access to a wide range of releases.
+
+
+To install **Qemu** and **OVMF** (a port of Intel’s tianocore firmware to the qemu virtual machine) using apt:
+
+```bash
+  sudo apt install qemu-system ovmf
+```
+
+Or by building it from source:
+
+```bash
+  wget https://download.qemu.org/qemu-8.2.0.tar.xz
+  tar xvJf qemu-8.2.0.tar.xz
+  cd qemu-8.2.0
+  ./configure
+  make
+```
+
+**Note:** Building **Qemu** from source code may require different versions of **gcc**, **nasm**, or **iasl**, depending on its release version. To ensure a successful build, it's important to install the correct versions of these requirements. You can refer to the [**Qemu** documentation](https://www.qemu.org/docs/master/) for more detailed information.
+
+### Prepare EDK II and OVMF
+
 Your text comes here
 ```bash
   pyhton server.py -p 8080
@@ -55,7 +80,7 @@ Here, you can observe the results of running our UEFI Weather APP on **Qemu** (v
 ![Successful Execution 3](Miscellaneous/success-exec-3.png)
 ![Successful Execution 4](Miscellaneous/success-exec-4.png)
 
-There are also situations where errors may arise, such as difficulties in finding the network interface or issues in communicating with the API. Our program is designed to handle most known possible errors effectively. The following two pictures illustrate these scenarios and demonstrate how we manage to address them. In the first case, we neglected to execute network configuration commands (as shown in startup.nsh) before running our program, which is necessary to prepare the UEFI shell to communicate with the **NIC**. On the other hand, in the second case, we failed to provide the correct access token for our weather API, resulting in access being denied.
+There are also situations where errors may arise, such as difficulties in finding the network interface or issues in communicating with the API. Our program is designed to handle most known possible errors effectively. The following two pictures illustrate these scenarios and demonstrate how we manage to address them. In the first case, we neglected to execute network configuration commands (as shown in [startup.nsh](Code/startup.nsh)) before running our program, which is necessary to prepare the UEFI shell to communicate with the **NIC**. On the other hand, in the second case, we failed to provide the correct access token for our weather API, resulting in access being denied.
 
 ![Failed Execution 1](Miscellaneous/error-exec-1.png)
 ![Failed Execution 2](Miscellaneous/error-exec-2.png)
