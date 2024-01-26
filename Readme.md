@@ -91,7 +91,7 @@ Now, we are prepared to build our UEFI Weather application. Initially, we copy o
 
 ### Build OVMf and Weather APP
 
-We execute the following commands to build the **OVMF** image and our project's EFI file. The export command is used to ensure that the build utilizes **python3.8** and not other incompatible versions of Python. The `--platform` flag is set to specify the dsc target file for the build. The `--arch` flag determines the underlying hardware architecture for the build. The `--tagname` flag specifies the toolchain for building. The `--buildtarget` flag sets the type of build target, either **RELEASE** or **DEBUG**. The `-D` flag is used to define macros for our build, helping to enable **HTTP** and **TLS**-related variables if we haven't set them to `TRUE` in the dsc file.
+We execute the following commands to build the **OVMF** image and our project's **EFI** file. The export command is used to ensure that the build utilizes **python3.8** and not other incompatible versions of Python. The `--platform` flag is set to specify the dsc target file for the build. The `--arch` flag determines the underlying hardware architecture for the build. The `--tagname` flag specifies the toolchain for building. The `--buildtarget` flag sets the type of build target, either **RELEASE** or **DEBUG**. The `-D` flag is used to define macros for our build, helping to enable **HTTP** and **TLS**-related variables if we haven't set them to `TRUE` in the dsc file.
 
 ```bash
   export PYTHON_COMMAND=/usr/bin/python3.8
