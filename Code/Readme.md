@@ -188,17 +188,17 @@ if (EFI_ERROR(Status)) {
 
 ### Request and Response Callbacks
 --------------------
-#### RequestCallback
+#### `RequestCallback`
 
 This function is invoked when the HTTP request is completed. It sets a global flag (`gRequestCallbackComplete`) to signal the completion of the request.
 
-#### ResponseCallback
+#### `ResponseCallback`
 
 Similarly, this function is called upon the completion of the HTTP response. It sets a global flag (`gResponseCallbackComplete`) to indicate that the response has been received.
 
 ### Utility Functions
 --------------------
-#### GetResponseCode
+#### `GetResponseCode`
 
 **Purpose:** Translate HTTP status codes to numeric values.
 
@@ -207,7 +207,7 @@ Similarly, this function is called upon the completion of the HTTP response. It 
 
 **Returns:** The numeric representation of the provided HTTP status code.
 
-#### GetInputCityName
+#### `GetInputCityName`
 
 **Purpose:** Prompt the user to input the city name.
 
@@ -216,7 +216,7 @@ Similarly, this function is called upon the completion of the HTTP response. It 
 
 **Returns:** `RETURN_SUCCESS` if the input is successful, `RETURN_INVALID_PARAMETER` if the input is empty.
 
-#### SplitString
+#### `SplitString`
 
 **Purpose:** Tokenize a string based on a delimiter.
 
@@ -229,7 +229,7 @@ Similarly, this function is called upon the completion of the HTTP response. It 
 
 ### Weather Report Display Functions
 --------------------
-#### PrintClearWeatherReport, PrintCloudsWeatherReport, ...
+#### `PrintClearWeatherReport`, `PrintCloudsWeatherReport`, ...
 
 Each of these functions is responsible for displaying weather reports based on the specific weather condition. They format and print relevant information like temperature, humidity, wind speed, and description to the UEFI console.
 
