@@ -323,3 +323,22 @@ Run this command on your shell to build and run the weather API:
 ```shell
 docker-compose up -d
 ```
+
+## startup.nsh File
+
+The `startup.nsh` file is a script that we used for configuring network interfaces in the UEFI Shell environment. This script is executed at startup to connect to a network and configure the network interface for DHCP.
+
+### Commands
+- *connect:* Initiates a connection to the network.
+- *ifconfig -r eth0:* Releases any existing IP address lease for the Ethernet interface `eth0`.
+- *ifconfig -s eth0 dhcp:* Configures the Ethernet interface `eth0` to obtain an IP address dynamically using DHCP.
+- *ifconfig -l eth0:* Displays information about the configured settings for the Ethernet interface `eth0`.
+
+**Note:** Adjustments to the script may be necessary based on the specific UEFI Shell environment and network configuration.
+
+```shell
+connect
+ifconfig -r eth0
+ifconfig -s eth0 dhcp
+ifconfig -l eth0
+```
