@@ -22,7 +22,7 @@ Some of the tools and technologies that our project mostly relies on are listed 
 
 Detailed explanations of implementations can be found in this [section](Code/Readme.md).
 
-There is also a comprehensive [report](Document/Readme.md) (in **PDF**) for this project that outlines the steps and challenges encountered.
+There is also a comprehensive [report](Document/hw_lab_weather_UEFI_project_documentation.pdf) (in **PDF**) for this project that outlines the steps and challenges encountered.
 
 ## How to Run
 
